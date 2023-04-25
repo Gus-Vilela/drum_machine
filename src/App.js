@@ -18,6 +18,8 @@ function App() {
     setState (state => ({...state, display: name}));
   }
 
+
+
   return (
     <div className="App">
       <div id="drum-machine">
