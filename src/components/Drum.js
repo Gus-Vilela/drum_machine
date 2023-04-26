@@ -5,14 +5,19 @@ function Drum(props){
     if(e.keyCode === props.drumData.keyCode){
         document.getElementById(props.drumData.key).play();
         props.setDisplay(props.drumData.name);
+        document.getElementById(props.drumData.name).classList.add('active');
     }
   }
-    useEffect(() => {
-        document.addEventListener('keydown', handleKeyDown);
-        return () => {
-            document.removeEventListener('keydown', handleKeyDown);
-        }
-    }, [handleKeyDown]);
+  useEffect(() => {
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('keyup', () => {
+          document.getElementById(props.drumData.name).classList.remove('active');
+      });
+      return () => {
+          document.removeEventListener('keydown', handleKeyDown);
+
+      }
+  });
     return(
         <div className="drum-pad" id={props.drumData.name} onClick={
             () => {
