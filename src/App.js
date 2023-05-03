@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 import Drum from './components/Drum';
+import './fonts/DS-DIGI.TTF';
 
 function App() {
   const [state,setState] = useState
@@ -28,7 +29,7 @@ function App() {
         <div className='drumKeys'>
         {state.data.map((item) => {
             return (
-              <Drum drumData={{...item}} key={item.id} setDisplay={setDisplay} ></Drum>
+              <Drum drumData={{...item}} key={item.id} setDisplay={setDisplay}></Drum>
             )
         })}
         </div>

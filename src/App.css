@@ -1,28 +1,37 @@
+@font-face{
+    font-family: 'DIGITAL';
+    src: local('DIGITAL'), url(./fonts/DS-DIGI.TTF) format('truetype');
+
+}
+
 #drum-machine{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 800px;
+    height: 550px;
     margin: 50px auto;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #E6E7ED;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 
 #display{
+    box-sizing: border-box;
+    font-family: DIGITAL;
     width: 240px;
     height: 100px;
-    border-radius: 5px;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-    background-color: #d3d3d3;
+    background-color: rgb(41, 41, 41);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    font-size: 30px;
-    color: black;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    font-size: 50px;
+    color: #EC2660;
     text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    border: solid 4px black;
+
 }
 
 .drumKeys{
@@ -30,20 +39,40 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    width: 400px;
-    height: 500px;
-    border-radius: 5px;
-    
-    background-color: #f2f2f2;
-    padding: 20px;
+    margin: 0 0 0 38px;
+    width: 450px;
+    height: 450px;
+    border-radius: 4px;
+    background:
+    linear-gradient(to right, black 2px, transparent 4px) 0 0,
+    linear-gradient(to right, black 2px, transparent 4px) 0 100%,
+    linear-gradient(to left, black 2px, transparent 4px) 100% 0,
+    linear-gradient(to left, black 2px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, black 2px, transparent 4px) 0 0,
+    linear-gradient(to bottom, black 2px, transparent 4px) 100% 0,
+    linear-gradient(to top, black 2px, transparent 4px) 0 100%,
+    linear-gradient(to top, black 2px, transparent 4px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.drum-pad-container{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: #d3d3d3;
+    margin: 10px;
+    border-radius: 100%;
 }
 
 .drum-pad{
+    box-sizing: border-box;
     width: 100px;
     height: 100px;
-    border-radius: 5px;
-    margin: 10px;
+    border-radius: 100%;
     background-color: #d3d3d3;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
     display: flex;
@@ -51,10 +80,8 @@
     align-items: center;
     cursor: pointer;
     outline: none;
-    border: none;
-    font-size: 20px;
+    font-size: 28px;
     color: black;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
     text-transform: uppercase;
     font-weight: bold;
     &:active{
@@ -70,3 +97,4 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 }
+
